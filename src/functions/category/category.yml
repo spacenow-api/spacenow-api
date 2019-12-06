@@ -1,0 +1,42 @@
+get-category:
+  handler: src/functions/category/get-category.main
+  events:
+    - http:
+        path: category/{id}
+        method: get
+get-categories:
+  handler: src/functions/category/get-categories.main
+  events:
+    - http:
+        path: categories
+        method: get
+get-categories-activities:
+  handler: src/functions/category/get-categories-activities.main
+  events:
+    - http:
+        path: categories/{ids}/activities
+        method: get
+get-root-categories:
+  handler: src/functions/category/get-root-categories.main
+  events:
+    - http:
+        path: categories/root
+        method: get
+put-category:
+  handler: src/functions/category/put-category.main
+  events:
+    - http:
+        path: category/{id}
+        method: put
+post-category:
+  handler: src/functions/category/post-category.main
+  events:
+    - http:
+        path: category
+        method: post
+delete-category:
+  handler: src/functions/category/delete-category.main
+  events:
+    - http:
+        path: category/{id}
+        method: delete

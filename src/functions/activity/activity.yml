@@ -1,0 +1,30 @@
+get-activities:
+  handler: src/functions/activity/get-activities.main
+  events:
+    - http:
+        path: activities
+        method: get
+get-activity:
+  handler: src/functions/activity/get-activity.main
+  events:
+    - http:
+        path: activity/{id}
+        method: get
+put-activity:
+  handler: src/functions/activity/put-activity.main
+  events:
+    - http:
+        path: activity/{id}
+        method: put
+post-activity:
+  handler: src/functions/activity/post-activity.main
+  events:
+    - http:
+        path: activity
+        method: post
+delete-activity:
+  handler: src/functions/activity/delete-activity.main
+  events:
+    - http:
+        path: activity/{id}
+        method: delete

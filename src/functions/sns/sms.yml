@@ -1,0 +1,6 @@
+send-sms-message:
+  handler: src/functions/sns/send-sms-message.main
+  events:
+    - http:
+        path: send-sms-message
+        method: post

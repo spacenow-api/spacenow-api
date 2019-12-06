@@ -1,0 +1,84 @@
+create-account:
+  handler: src/functions/stripe/create-account.main
+  events:
+    - http:
+        path: stripe/account
+        method: post
+create-charge:
+  handler: src/functions/stripe/create-charge.main
+  events:
+    - http:
+        path: stripe/charge
+        method: post
+create-customer:
+  handler: src/functions/stripe/create-customer.main
+  events:
+    - http:
+        path: stripe/customer
+        method: post
+create-customer-source:
+  handler: src/functions/stripe/create-customer-source.main
+  events:
+    - http:
+        path: stripe/customer/{id}/source
+        method: post
+create-token:
+  handler: src/functions/stripe/create-token.main
+  events:
+    - http:
+        path: stripe/token
+        method: post
+create-payout:
+  handler: src/functions/stripe/create-payout.main
+  events:
+    - http:
+        path: stripe/payout/{id}
+        method: post
+delete-account:
+  handler: src/functions/stripe/delete-account.main
+  events:
+    - http:
+        path: stripe/account/{id}
+        method: delete
+delete-source:
+  handler: src/functions/stripe/delete-source.main
+  events:
+    - http:
+        path: stripe/source/{id}
+        method: delete
+retrieve-account:
+  handler: src/functions/stripe/retrieve-account.main
+  events:
+    - http:
+        path: stripe/account/{id}
+        method: get
+retrieve-customer:
+  handler: src/functions/stripe/retrieve-customer.main
+  events:
+    - http:
+        path: stripe/customer/{id}
+        method: get
+retrieve-transfer:
+  handler: src/functions/stripe/retrieve-transfer.main
+  events:
+    - http:
+        path: stripe/transfer/{id}
+        method: get
+reverse-transfer:
+  handler: src/functions/stripe/reverse-transfer.main
+  events:
+    - http:
+        path: stripe/transfer/{id}/reverse
+        method: post
+retrieve-balance:
+  handler: src/functions/stripe/retrieve-balance.main
+  events:
+    - http:
+        path: stripe/balance/{id}
+        method: get
+webhook:
+  handler: src/functions/stripe/webhook.main
+  events:
+    - http:
+        path: stripe/webhook
+        method: post
